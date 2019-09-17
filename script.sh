@@ -1,5 +1,5 @@
 sudo su
-source ~/.profile
+#source ~/.profile
 sudo apt-get install openjdk-8-jdk -y
 sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 sudo apt-get install apt-transport-https
