@@ -6,7 +6,7 @@ sudo echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo
 sudo apt-get update && sudo apt-get install elasticsearch 
 sudo apt-get update && sudo apt-get install logstash
 sudo apt-get update && sudo apt-get install kibana
-echo 'export ip=$(hostname -i)' >> ~/.profile
+echo 'export ip='$(hostname -i)'' >> ~/.profile
 source ~/.profile
 sed -i '/#cluster.name: my-application/c\cluster.name: my-cluster' /etc/elasticsearch/elasticsearch.yml
 sed -i '/#node.name: node-1/c\node.name: test' /etc/elasticsearch/elasticsearch.yml
