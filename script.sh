@@ -12,5 +12,6 @@ echo 'export ip='$(hostname -i)'' >> ~/.bashrc
 source ~/.bashrc
 sed -i '/#cluster.name: my-application/c\cluster.name: my-cluster' /etc/elasticsearch/elasticsearch.yml
 sed -i '/#node.name: node-1/c\node.name: test' /etc/elasticsearch/elasticsearch.yml
-sed -i 's/#network.host: 192.168.0.1/network.host: '$ip'/' /etc/elasticsearch/elasticsearch.yml
+sed -i '/#network.host: 192.168.0.1/c\network.host: ' /etc/elasticsearch/elasticsearch.yml
+sed -i 's/#network.host: /network.host: '$ip'/' /etc/elasticsearch/elasticsearch.yml
 	  
