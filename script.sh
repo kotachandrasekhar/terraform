@@ -18,4 +18,6 @@ sed -i 's/#network.host: 192.168.0.1/network.host: '$ip'/' /etc/elasticsearch/el
 echo "server.host: \"$ip\"" >>/etc/kibana/kibana.yml
 echo "server.name: \"elkserver\"" >>/etc/kibana/kibana.yml
 echo "elasticsearch.hosts: [\"http://$ip:9200\"]" >>/etc/kibana/kibana.yml
-	  
+echo "export  JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >>/etc/profile
+echo "export  PATH=$PATH:$HOME/bin:$JAVA_HOME/bin" >>/etc/profile
+source /etc/profile 
