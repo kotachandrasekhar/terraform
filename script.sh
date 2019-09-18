@@ -15,4 +15,7 @@ sed -i '/#cluster.name: my-application/c\cluster.name: my-cluster' /etc/elastics
 sed -i '/#node.name: node-1/c\node.name: test' /etc/elasticsearch/elasticsearch.yml
 sed -i 's/#network.host: 192.168.0.1/network.host: '$ip'/' /etc/elasticsearch/elasticsearch.yml
 #sed -i 's/network.host: /network.host: '$ip'/' /etc/elasticsearch/elasticsearch.yml
+echo "server.host: \"$ip\"" >>/etc/kibana/kibana.yml
+echo "server.name: \"elkserver\"" >>/etc/kibana/kibana.yml
+echo "elasticsearch.hosts: [\"http://$ip:9200\"]" >>/etc/kibana/kibana.yml
 	  
